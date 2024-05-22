@@ -1,6 +1,6 @@
 # watersf
 
-Find nearby water stations in SF
+Find nearby water stations in SF.
 
 ## Pre-requisites
 
@@ -13,11 +13,11 @@ Find nearby water stations in SF
 
 ## Usage
 
-1. Run `npm start`
+1. Run `npm run dev`
 1. Open `http://localhost:3000` in your browser
 
 ## Setup
 
 ```
-npm create vite@latest www -- --template react-swc-ts 
+npx create-next-app@latest
 ```
