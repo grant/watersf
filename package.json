@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "./deploy.sh"
+    "stage": "./deploy.sh",
+    "deploy": "RUN_ENV=PROD ./deploy.sh"
   },
   "dependencies": {
     "@types/node": "^20",
