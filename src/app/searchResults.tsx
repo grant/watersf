@@ -60,26 +60,28 @@ function getMapsLink(searchResult: WaterResource) {
   const isMobile = isMobileDevice();
 
   if (isMobile) {
+    const addr = searchResult.address
+      ? searchResult.address
+      : searchResult.name;
     if (isApple) {
-      const addr = searchResult.address
-        ? searchResult.address
-        : searchResult.name;
       return addr
         ? `http://maps.apple.com/?daddr=${encodeURIComponent(addr)}`
         : null;
     } else if (isAndroid) {
-      const geo =
-        searchResult.latitude && searchResult.longitude
-          ? `${searchResult.latitude},${searchResult.longitude}`
-          : null;
-      return geo ? `geo:${geo}` : null;
+      return addr
+        ? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+            addr
+          )}`
+        : null;
     }
   } else {
     // If not mobile, use the Google Maps URL
     const geo =
       searchResult.latitude && searchResult.longitude
         ? `${searchResult.latitude},${searchResult.longitude}`
-        : null;
+        : searchResult.address
+        ? searchResult.address
+        : searchResult.name;
     return geo
       ? `https://www.google.com/maps/search/?api=1&query=${geo}`
       : null;

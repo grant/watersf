@@ -44,7 +44,7 @@ export default function Home() {
         <h1 className="text-4xl">Water SF</h1>
         <h3>Find Water Fountains in San Francisco</h3>
         <a href="https://tapwatersafe.com/san-francisco-us#:~:text=Yes%2C%20San%20Francisco%20has%20numerous,schools%2C%20and%20other%20public%20facilities.">
-          Is it safe?
+          Is it safe? - YES!
         </a>
         {loading === null ? (
           <></>
