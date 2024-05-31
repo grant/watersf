@@ -10,7 +10,11 @@ export function SearchResults({
 }) {
   return (
     <div>
-      <h3 className="text-2xl text-center">{title}</h3>
+      {searchResults.length ? (
+        <h3 className="text-2xl py-6 text-center">{title}</h3>
+      ) : (
+        <></>
+      )}
       {searchResults.map((searchResult) => (
         <SearchResult searchResult={searchResult} />
       ))}

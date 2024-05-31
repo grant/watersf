@@ -38,13 +38,16 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-8">
+    <main className="flex min-h-screen flex-col items-center justify-between px-8 py-4">
       {/* Top logo and location */}
       <div className="text-center">
         <h1 className="text-4xl">Water SF</h1>
-        <h3>Find Water Fountains in San Francisco</h3>
-        <a href="https://tapwatersafe.com/san-francisco-us#:~:text=Yes%2C%20San%20Francisco%20has%20numerous,schools%2C%20and%20other%20public%20facilities.">
-          Is it safe? - YES!
+        <h3>Find Water Fountains & Bathrooms in San Francisco</h3>
+        <a
+          className="italic text-blue-500 hover:underline"
+          href="https://tapwatersafe.com/san-francisco-us#:~:text=Yes%2C%20San%20Francisco%20has%20numerous,schools%2C%20and%20other%20public%20facilities."
+        >
+          Is it safe? - <strong>YES!</strong>
         </a>
         {loading === null ? (
           <></>
@@ -53,8 +56,8 @@ export default function Home() {
         ) : error !== null ? (
           <p>Error: {error}</p>
         ) : (
-          <p>
-            Your location: {userLocation?.latitude}, {userLocation?.longitude}
+          <p className="pt-3">
+            📍 {userLocation?.latitude}, {userLocation?.longitude}
           </p>
         )}
       </div>
@@ -62,11 +65,11 @@ export default function Home() {
       {/* List of results */}
       <div>
         <SearchResults
-          title="Water Fountains"
+          title="Water Fountains 🚰"
           searchResults={searchResultsWater}
         />
         <SearchResults
-          title="Restrooms"
+          title="Restrooms 🚻"
           searchResults={searchResultsRestroom}
         />
       </div>
@@ -76,7 +79,7 @@ export default function Home() {
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded"
         onClick={onClick}
       >
-        Find Water
+        Find Water 🚰
       </button>
     </main>
   );
