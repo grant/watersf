@@ -11,7 +11,7 @@ export function SearchResults({
   return (
     <div>
       {searchResults.length ? (
-        <h3 className="text-2xl py-6 text-center">{title}</h3>
+        <h3 className="text-2xl my-6 text-center">{title}</h3>
       ) : (
         <></>
       )}
@@ -43,12 +43,12 @@ function SearchResult({
   );
 
   return (
-    <div className="border border-gray-300 rounded p-4 mb-4">
+    <div className="border border-gray-300 bg-slate-950 rounded p-4 mb-4">
       <h2 className="text-xl font-bold mb-2">{searchResult.name}</h2>
-      <p className="text-gray-600 mb-2">
+      <p className="text-gray-400 mb-2">
         {mapButton} {searchResult.address}{" "}
       </p>
-      <p className="text-gray-600 mb-2">
+      <p className="text-gray-400 mb-2">
         {formatDistance(searchResult.distance)}
       </p>
     </div>
@@ -97,5 +97,13 @@ function isMobileDevice() {
 }
 
 function formatDistance(distance: number) {
-  return `${distance.toFixed(2)} km | ${(distance * 0.621371).toFixed(2)} mi`;
+  const km = `${distance.toFixed(2)} km`;
+  const mi = `${(distance * 0.621371).toFixed(2)} mi`;
+  return (
+    <>
+      {km}
+      <span className="text-slate-700"> | </span>
+      {mi}
+    </>
+  );
 }

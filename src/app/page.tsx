@@ -38,7 +38,7 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center px-8 py-4">
+    <main className="flex min-h-screen flex-col bg-gray-800 items-center px-8 py-4">
       {/* Top logo and location */}
       <div className="text-center">
         <div className="py-3">
@@ -53,7 +53,11 @@ export default function Home() {
         </div>
         {loading === null ? (
           <div className="w-100">
-            <img src="./map.png" alt="Map" className="max-w-screen-sm" />
+            <img
+              src="./map.png"
+              alt="Map"
+              className="max-w-screen-sm border-dashed border rounded-md p-4 border-blue-200"
+            />
           </div>
         ) : loading ? (
           <p className="py-3">Loading...</p>
