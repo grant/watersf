@@ -38,25 +38,29 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between px-8 py-4">
+    <main className="flex min-h-screen flex-col items-center px-8 py-4">
       {/* Top logo and location */}
       <div className="text-center">
-        <h1 className="text-4xl">Water SF</h1>
-        <h3>Find Water Fountains & Bathrooms in San Francisco</h3>
-        <a
-          className="italic text-blue-500 hover:underline"
-          href="https://tapwatersafe.com/san-francisco-us#:~:text=Yes%2C%20San%20Francisco%20has%20numerous,schools%2C%20and%20other%20public%20facilities."
-        >
-          Is it safe? - <strong>YES!</strong>
-        </a>
+        <div className="py-3">
+          <h1 className="text-4xl py-2">Water SF</h1>
+          <h3>Find Water Fountains & Bathrooms in San Francisco</h3>
+          <a
+            className="italic text-blue-500 hover:underline"
+            href="https://tapwatersafe.com/san-francisco-us#:~:text=Yes%2C%20San%20Francisco%20has%20numerous,schools%2C%20and%20other%20public%20facilities."
+          >
+            Is it safe? - <strong>YES!</strong>
+          </a>
+        </div>
         {loading === null ? (
-          <></>
+          <div className="w-100">
+            <img src="./map.png" alt="Map" className="max-w-screen-sm" />
+          </div>
         ) : loading ? (
-          <p>Loading...</p>
+          <p className="py-3">Loading...</p>
         ) : error !== null ? (
           <p>Error: {error}</p>
         ) : (
-          <p className="pt-3">
+          <p>
             📍 {userLocation?.latitude}, {userLocation?.longitude}
           </p>
         )}
@@ -75,12 +79,14 @@ export default function Home() {
       </div>
 
       {/* Button to find water */}
-      <button
-        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 px-12 rounded"
-        onClick={onClick}
-      >
-        Find Water 🚰
-      </button>
+      {!loading && (
+        <button
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-4 my-8 px-12 rounded"
+          onClick={onClick}
+        >
+          Find Water 🚰
+        </button>
+      )}
     </main>
   );
 }
