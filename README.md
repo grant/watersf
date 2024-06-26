@@ -2,6 +2,24 @@
 
 Find nearby water stations in SF.
 
+[watersf.com](https://watersf.com)
+
+## Technologies
+
+Tools:
+
+- Google Cloud: Web Hosting
+- GitHub: Source control
+- Cloudflare: CDN service
+- Namecheap: Domain name registration
+
+Languages:
+
+- Node
+- Next.js
+- TypeScript
+- Tailwind CSS
+
 ## Pre-requisites
 
 - Node.js
