@@ -63,14 +63,9 @@ export function getResults(
     if (!b.latitude || !b.longitude) {
       return -1;
     }
-    const distanceA = Math.sqrt(
-      Math.pow(userLocation.latitude - parseFloat(a.latitude), 2) +
-        Math.pow(userLocation.longitude - parseFloat(a.longitude), 2)
-    );
-    const distanceB = Math.sqrt(
-      Math.pow(userLocation.latitude - parseFloat(b.latitude), 2) +
-        Math.pow(userLocation.longitude - parseFloat(b.longitude), 2)
-    );
+    const distanceA = getDistanceFromLatLonInKm(userLocation.latitude, userLocation.longitude, parseFloat(a.latitude), parseFloat(a.longitude));
+    const distanceB = getDistanceFromLatLonInKm(userLocation.latitude, userLocation.longitude, parseFloat(b.latitude), parseFloat(b.longitude));
+
     return distanceA - distanceB;
   });
 
