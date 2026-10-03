@@ -2,7 +2,9 @@
 
 Find nearby water stations in SF.
 
-[watersf.com](https://watersf.com)
+Public link: [https://grant.cm/watersf](https://grant.cm/watersf)
+
+That address redirects to the live Cloud Run app at [https://watersf-166145790296.us-central1.run.app](https://watersf-166145790296.us-central1.run.app) (project `watersfcom`, service `watersf`, region `us-central1`).
 
 ## Technologies
 
